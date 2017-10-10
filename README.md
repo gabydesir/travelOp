@@ -27,7 +27,6 @@ I currently focused on MVP, and hope to get the barebones of my app by Friday. A
 | Build CRUD functionality      | 10/10 | 5hrs          |        |
 | Get Insta API and test run    | 10/11 | 3hrs          |        |
 | Set up EJS views              | 10/11 | 2hrs          |        |
-| API: find, read Docs, and Test| 10/11 | 3hrs          |        |
 | React                         | 10/12 | 8hrs          |        |
 | Auth Docs                     | 10/13 | 12hrs         |        |
 | Debbuging                     | 10/14 | 5hrs          |        |
