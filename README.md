@@ -32,7 +32,7 @@ I currently focused on MVP, and hope to get the barebones of my app by Friday. A
 | Auth Docs                     | 10/13 | 12hrs         |        |
 | Debbuging                     | 10/14 | 5hrs          |        |
 | Styling                       | 10/15 | 8hrs          |        |
-                                  TOTAL | 60hrs         |        |   
+                                  TOTAL  60hrs           
 
 ## MVP 
 1) Create database
