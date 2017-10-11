@@ -20,10 +20,11 @@ I currently focused on MVP, and hope to get the barebones of my app by Friday. A
 
 | Taks                          | Date  | Estimated time| Actual |
 | -------------                 |:-----:| :------------:|:------:|
-| Create GitHub Repo w/ read.me | 10/06 | 2hrs          |2hr     |
+| Create GitHub Repo w/ read.me | 10/06 | 2hrs          | 2hr    |
 | Node scaffolding              | 10/10 | 4hrs          |        |
 | Express init + i dependencies | 10/10 | 2hrs          |        |
-| Build DB                      | 10/10 | 2hrs          |        |
+| Get Twitter API & read docs   | 10/10 | 1hrs          | 2hr    |
+| Build DB                      | 10/10 | 2hrs          |        |
 | Build CRUD functionality      | 10/10 | 5hrs          |        |
 | Get insta API & test run it   | 10/11 | 5hrs          |        |
 | Set up EJS views              | 10/11 | 2hrs          |        |
