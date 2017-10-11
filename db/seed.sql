@@ -1,8 +1,8 @@
 \c travel_op;
 
-INSERT INTO users (username, email, password)
+INSERT INTO users (username, first_name, last_name, email, password)
 VALUES
-('user1', 'user1@email.com', 'password1'),
-('user2', 'user2@email.com', 'password2'),
-('user3', 'user3@email.com', 'password3');
+('gabycodes', 'gaby', 'desir', 'gaby@email.com', 'loveislove');
 
+INSERT INTO posts (description, image) VALUES
+('Cuba loving', 'https://www.ncl.com/sites/default/files/NTK.CubaFAQ_1.jpg');
