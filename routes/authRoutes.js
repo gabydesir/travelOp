@@ -13,14 +13,15 @@ authRouter.get('/register', authHelpers.loginRedirect, (req, res) => {
 });
 
 authRouter.post('/register', (req, res, next) => {
-  authHelpers.createNewUser(req)
+  authHelpers.createNewUser(req, res)
     .then((user) => {
       console.log(user);
-      // req.login(user, (err) => {
-      //   if (err) return next(err);
+      req.login(user, (err) => {
+        console.log("authHelper: ", user)
+        if (err) return next(err);
 
-      //   res.redirect('/user');
-      // });
+        res.redirect('/user');
+      });
     })
     .catch((err) => { res.status(500).json({ status: 'error' }); });
 });

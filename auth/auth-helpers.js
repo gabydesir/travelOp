@@ -15,6 +15,7 @@ function loginRedirect(req, res, next) {
 }
 
 function createNewUser(req) {
+  console.log("inside createNewUser", req.body.username)
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(req.body.password, salt);
   return User.create({

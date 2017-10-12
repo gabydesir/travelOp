@@ -1,75 +1,62 @@
 // requiring dependencies
 const Post = require('../models/post');
 
-const postController = {};
+// const postController = {};
+module.exports = {
 
 // setting up controller which handles all the posts
-postController.index = (req, res) => {
-  Post.findAll()
-    .then((posts) => {
-      res.json({
-        message: 'ok',
-        data: { posts },
-      });
-      console.log(ideas)
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json({ message: '400', err });
-    });
-};
 
-postController.show = (req, res) => {
-  Post.findById(req.params.id)
-    .then((post) => {
-      res.json({
-        message: 'ok',
-        data: { post },
-      });
-    })
-    .catch((err) => {
-      res.status(400).json({ message: '400', err });
-    });
-};
+  index(req, res, next) {
+    Post.findAll()
+      .then((posts) => {
+        res.locals.posts = posts;
+        next();
+      })
+      .catch(err => next(err));
+  },
 
-postController.create = (req, res) => {
-  console.log(req.body);
-  Post.create({
-    user_id: (req.body.user_id),
-    description: (req.body.description),
-    image: (req.body.image),
-  })
-    .then((post) => {
-      res.json({ message: 'post created', data: { post } });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json({ message: '400', err });
-    });
-};
+  show(req, res, next) {
+    Post.findById(req.params.id)
+      .then((post) => {
+        res.locals.post = post;
+        next();
+      })
+      .catch(err => next(err));
+  },
 
-postController.update = (req, res) => {
-  Post.update({
-    id: (req.body.post),
-    description: (req.body.description),
-    image: (req.body.image),
-  })
-    .then((post) => {
-      res.json({ message: 'post updated' });
-    })
-    .catch((err) => {
-      res.status(500).json({ message: '500', err });
-    });
-};
+  create(req, res, next) {
+    Post.save(req.body)
+  // Post.create({
+  //   user_id: (req.body.user_id),
+  //   description: (req.body.description),
+  //   image: (req.body.image),
+  // })
+      .then((post) => {
+        res.locals.post = post;
+        next();
+      })
+      .catch(err => next(err));
+  },
 
-postController.destroy = (req, res) => {
-  Post.destroy(req.params.id)
-    .then(() => {
-      res.json({ message: 'post deleted' });
-    })
-    .catch((err) => {
-      res.status(500).json({ message: '500', err });
-    });
-};
+  update(req, res, next) {
+    Post.update(req.body)
+  // Post.update({
+  //   id: (req.body.post),
+  //   description: (req.body.description),
+  //   image: (req.body.image),
+  // })
+      .then((post) => {
+        res.locals.post = post;
+        next();
+      })
+      .catch(err => next(err));
+  },
 
-module.exports = postController;
+  destroy(req, res, next) {
+    Post.destroy(req.params.id)
+      .then(() => next())
+      .catch(err => next(err));
+  },
+
+};
+// module.exports = postController;

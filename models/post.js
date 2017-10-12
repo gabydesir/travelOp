@@ -2,6 +2,7 @@
 // allowing users to create, read, update & delete
 
 const dbp = require('../config/configdb');
+const pgp = require('pg-promise')();
 
 // setting user selection happening in the post table
 const Post = {};
