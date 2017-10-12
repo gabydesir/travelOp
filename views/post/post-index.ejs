@@ -1,0 +1,12 @@
+<% include ../partials/header %>
+<a href= '/post/new'>Add post</a>
+<% for (let posts of data) { %>
+    <div class= 'post'>
+    <p><%= posts.description %></p>
+    <p><%= posts.image %></p>
+    <a href='/posts/<%= posts.id%>'>View</a>
+
+    </div>
+  <% } %>
+
+<% include ../partials/footer %>
