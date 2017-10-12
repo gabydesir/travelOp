@@ -49,6 +49,13 @@ app.use('/user', userRoutes);
 const postRoutes = require('./routes/travel-route');
 app.use('/post', postRoutes);
 
+// get request handler for POSTS
+app.get('/', (req, res) => {
+  res.render('index', {
+    message: 'HELLOoOOOoOOoOOOooO',
+    subtitle: 'Welcome to TravelOp',
+  });
+});
 
 
 // API CALLS
@@ -79,9 +86,9 @@ app.listen(port, () => {
   console.log(`TravelOp is listening on port ${port}`);
 });
 
-app.get('/', function(req,res){
-  res.send('HELLOoOOOoOOoOOOooO! <h1>Welcome to TravelOp </h1>');
-});
+// app.get('/', function(req,res){
+//   res.send('HELLOoOOOoOOoOOOooO! <h1>Welcome to TravelOp </h1>');
+// });
 
 module.exports = app;
 

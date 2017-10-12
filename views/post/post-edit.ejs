@@ -1,0 +1,10 @@
+<% include ../partials/header %>
+
+<form method='POST' action='/post/<%= data.id %>?_method=PUT'>
+  <input name='des' type='text' value='<%= posts.image  %>' />
+  <input name='image' type='text' value='<%= posts.description %>' />
+
+  <input type='submit' value='Edit it!' />
+</form>
+
+<% include ../partials/footer %>
