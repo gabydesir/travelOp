@@ -10,7 +10,7 @@ const Post = {};
 Post.findAll = () => {
   return dbp.query(
     `
-    SELECT * FROM posts ORDER BY date_created DESC`,
+    SELECT * FROM posts`, //ORDER BY date_created DESC
   );
 };
 

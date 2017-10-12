@@ -8,7 +8,7 @@ const path = require('path');
 const passport = require('passport'); // dependency for authentication
 const session = require('express-session');
 const methodOverride = require('method-override');
-const pg = require('pg-promise');
+const pgp = require('pg-promise');
 const cookieParser = require('cookie-parser');
 const Twit = require('twit');// dependency for Twitter API
 const port = 3000;
@@ -40,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // setting up ejs template
 app.set('view engine', 'ejs');
 
-const authRouter= require('./routes/authRoutes');
+const authRouter = require('./routes/authRoutes');
 app.use('/auth', authRouter);
 
 const userRoutes = require('./routes/users');
@@ -49,10 +49,34 @@ app.use('/user', userRoutes);
 const postRoutes = require('./routes/travel-route');
 app.use('/post', postRoutes);
 
+
+
+// API CALLS
+// app.use('/api/post', postRoutes, errorHandler);
+
+// app.get('/api/twitter', (req, res) => {
+//   const T = new Twit({
+//     consumer_key: process.env.TWITTER_CONSUMER_KEY,
+//     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+//     app_only_auth: true,
+//   });
+
+//   const params = { q: '' };
+
+//   const tweetData = (err, data, response) => {
+//     res.json({
+//       data,
+//     });
+//   };
+
+//   T.get('search/tweets', params, tweetData);
+// });
+
+
 // Listening on PORT
 app.listen(port, () => {
   // to prove it worked, print to the terminal
-  console.log(`My awesome app is listening on port ${port}`);
+  console.log(`TravelOp is listening on port ${port}`);
 });
 
 app.get('/', function(req,res){
