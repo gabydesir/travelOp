@@ -1,6 +1,9 @@
+// requiring auth dependencies
 const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 
+// function that will use bcrypt to compare passwords
+// input from user vs whats stored in db
 function comparePass(userPassword, databasePassword) {
   return bcrypt.compareSync(userPassword, databasePassword);
 }
@@ -23,7 +26,7 @@ function createNewUser(req) {
   });
 }
 
-function loginRequired(req, res, next){
+function loginRequired(req, res, next) {
   if (!req.user) res.redirect('/auth/login');
 
   return next();

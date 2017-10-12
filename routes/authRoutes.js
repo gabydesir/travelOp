@@ -1,3 +1,4 @@
+// requiring dependencies
 const express = require('express');
 const authRouter = express.Router();
 const passport = require('../auth/local');
@@ -23,13 +24,17 @@ authRouter.post('/register', (req, res, next) => {
     })
     .catch((err) => { res.status(500).json({ status: 'error' }); });
 });
+// what I was missing
+authRouter.get('/login', authHelpers.loginRedirect, (req, res) => {
+  res.render('auth/login');
+});
 
 authRouter.post('/login', passport.authenticate('local', {
   successRedirect: '/user',
   failureRedirect: '/auth/login',
   failureFlash: true }));
 
-authRouter.get('logout', (req, res) => {
+authRouter.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/');
 });
