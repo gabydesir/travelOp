@@ -46,6 +46,9 @@ app.use('/auth', authRouter);
 const userRoutes = require('./routes/users');
 app.use('/user', userRoutes);
 
+const postRoutes = require('./routes/travel-route');
+app.use('/post', postRoutes);
+
 // Listening on PORT
 app.listen(port, () => {
   // to prove it worked, print to the terminal
