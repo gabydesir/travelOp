@@ -7,7 +7,7 @@ const views = require('../controllers/viewController');
 const postRoutes = express.Router();
 
 // routes and what they should render
-postRoutes.get('/:id/edit', postController.show, views.showEditForm); // get by id, to show one
+postRoutes.get('/edit/:id', postController.show, views.showEditForm); // get by id, to show one
 postRoutes.get('/new', views.showAddForm); // get by id, to show one
 
 

@@ -18,6 +18,8 @@ module.exports = {
   },
 
   showEditForm(req, res) {
+    console.log('this red')
+    console.log(res.locals.post)
     res.render('post/post-edit', {
       data: res.locals.post,
     });
@@ -28,6 +30,7 @@ module.exports = {
   },
 
   handleUpdate(req, res) {
+    console.log('this red')
     res.redirect(`/post/${req.params.id}`);
   },
 

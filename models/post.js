@@ -22,7 +22,7 @@ module.exports = {
   findById(id) {
     return dbp.oneOrNone(
       `
-      SELECT FROM posts
+      SELECT * FROM posts
       WHERE id = $1`,
       [id],
     );
@@ -45,7 +45,7 @@ module.exports = {
       `
       UPDATE posts
       SET
-      description = $/description/
+      description = $/description/,
       image = $/image/
       WHERE id = $/id/
       RETURNING * `,

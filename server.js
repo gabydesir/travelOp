@@ -12,6 +12,8 @@ const pgp = require('pg-promise');
 const cookieParser = require('cookie-parser');
 const Twit = require('twit');// dependency for Twitter API
 const port = 3000;
+const cloudinary = require('cloudinary');
+const cloudinaryC = require('cloudinary-core');
 
 // logging the dependencies
 // setting up logger
@@ -60,24 +62,30 @@ app.get('/', (req, res) => {
 
 // API CALLS
 // app.use('/api/post', postRoutes, errorHandler);
+// /api/twitter
 
-// app.get('/api/twitter', (req, res) => {
-//   const T = new Twit({
-//     consumer_key: process.env.TWITTER_CONSUMER_KEY,
-//     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-//     app_only_auth: true,
-//   });
+app.get('/api/twitter', (req, res) => {
+  const T = new Twit({
+    consumer_key: process.env.TWITTER_CONSUMER_KEY,
+    consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+    app_only_auth: true,
+  });
 
-//   const params = { q: '' };
+  const params = { q: 'travel OR wanderlust OR jetsetter OR traveller', count: 25  };
 
-//   const tweetData = (err, data, response) => {
-//     res.json({
-//       data,
-//     });
-//   };
+  const tweetData = (err, data, response) => {
+    res.render('index', {
+      data,
+    });
+  };
 
-//   T.get('search/tweets', params, tweetData);
-// });
+  T.get('search/tweets', params, tweetData);
+});
+
+
+// cloudinary.v2.uploader.upload("./public/images/haton.jpg",
+//     function(error, result) {console.log(result); });
+
 
 
 // Listening on PORT

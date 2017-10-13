@@ -10,31 +10,29 @@ module.exports = {
     Post.findAll()
       .then((posts) => {
         res.locals.posts = posts;
-        console.log(posts);
-
         next();
       })
       .catch(err => next(err));
   },
 
   show(req, res, next) {
-    console.log('here', req.params.id)
+    console.log('yo')
     Post.findById(req.params.id)
       .then((post) => {
+        console.log(req.params.id)
         res.locals.post = post;
-        console.log(post);
         next();
       })
       .catch(err => next(err));
   },
 
   create(req, res, next) {
-    //Post.create(req.body)
-  Post.create({
-    user_id: (req.body.user_id),
-    description: (req.body.description),
-    image: (req.body.image),
-  })
+
+    Post.create({
+      user_id: (req.body.user_id),
+      description: (req.body.description),
+      image: (req.body.image),
+    })
       .then((post) => {
         res.locals.post = post;
         next();
@@ -43,12 +41,13 @@ module.exports = {
   },
 
   update(req, res, next) {
+    console.log("inside create: ", req.body)
     // Post.update(req.body)
-  Post.update({
-    id: (req.body.post),
-    description: (req.body.description),
-    image: (req.body.image),
-  })
+    Post.update({
+      id: (req.body.id),
+      description: (req.body.description),
+      image: (req.body.image),
+    })
       .then((post) => {
         res.locals.post = post;
         next();

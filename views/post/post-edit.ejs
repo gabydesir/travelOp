@@ -1,8 +1,9 @@
 <% include ../partials/header %>
 
-<form method='POST' action='/post/<%= data.id %>?_method=PUT'>
-  <input name='des' type='text' value='<%= posts.image  %>' />
-  <input name='image' type='text' value='<%= posts.description %>' />
+<form method='POST' action='/post/<%= post.id %>?_method=PUT'>
+  <input name='id' type='hidden' value='<%= post.id %>' />
+  <input name='description' type='text' value='<%= post.description %>' />
+  <input name='image' type='text' value='<%= post.image %>' />
 
   <input type='submit' value='Edit it!' />
 </form>

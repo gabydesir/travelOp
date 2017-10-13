@@ -4,9 +4,9 @@
 <% for (let posts of data) { %>
     <div class= 'post'>
     <p><%= posts.description %></p>
-    <img src=<%= posts.image %> size=50% />
+    <img src=<%= posts.image %> />
 
-    <a href='/post/<%= posts.id%>'>Edit Post</a>
+    <a href='/post/edit/<%= posts.id%>'>Edit Post</a>
 
     </div>
   <% } %>

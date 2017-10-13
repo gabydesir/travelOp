@@ -1,13 +1,16 @@
 <% include ../partials/header %>
 
 <div class='post'>
-  <h1><%= data.description %></h1>
-  <h2><%= data.image %></h2>
-  <a href="/post/<%= data.id %>/edit"> Edit this post </a>
-  <form method='POST' action="/post/<%= data.id %>?_method=DELETE">
-    <input class= delete type="Submit" value="Delete"/>
+  <h1><%= post.description %></h1>
+  <img src=<%= post.image %> />
+
+  <a href='/post/<%= post.id %>'> Edit this post </a>
+
+  <form method='POST' action="/post/<%= post.id %>?_method=DELETE">
+    <input type="Submit" value="Delete"/>
   </form>
-  <a href='/posts'>See all Posts</a>
+
+  <a href='/post'>See all Posts</a>
 </div>
 
 <% include ../partials/footer %>
