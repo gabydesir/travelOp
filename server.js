@@ -11,9 +11,10 @@ const methodOverride = require('method-override');
 const pgp = require('pg-promise');
 const cookieParser = require('cookie-parser');
 const Twit = require('twit');// dependency for Twitter API
-const port = 3000;
+const port = 5000;
 const cloudinary = require('cloudinary');
 const cloudinaryC = require('cloudinary-core');
+const axios = require('axios');
 
 // logging the dependencies
 // setting up logger
@@ -74,19 +75,42 @@ app.get('/api/twitter', (req, res) => {
   const params = { q: 'travel OR wanderlust OR jetsetter OR traveller', count: 25  };
 
   const tweetData = (err, data, response) => {
-    res.render('index', {
-      data,
+   console.log('inside tweet data')
+    res.json({
+      data: data.statuses[0].text,
     });
   };
 
   T.get('search/tweets', params, tweetData);
 });
-
+// res.send => on index to render on the /
+// then have the second part of the function into a separate function
+//
 
 // cloudinary.v2.uploader.upload("./public/images/haton.jpg",
 //     function(error, result) {console.log(result); });
 
+//const apiCall = require('./public/apiCall');
+app.get('/api', (req, res) => {
+  res.send('hello')
+    // axios.get('/api/twitter')
+    //   .then((res) => {
+    //     console.log(res)
+// no need for second API call =>
 
+    //     const tweetArr = res.data.data.statuses;
+    //     const item = tweetArr[Math.floor(Math.random() * tweetArr.length)];
+    //     console.log(item.text);
+    //     res.send({
+    //       tweet: item.text,
+    //       screen_name: item.user.screen_name,
+    //     })
+    //     .catch(err => console.log(err));
+    //   // console.log(JSON.stringify(res.data.data.statuses[0].text))
+    //   });
+ // apiCall()
+ // res.render('index');
+});
 
 // Listening on PORT
 app.listen(port, () => {

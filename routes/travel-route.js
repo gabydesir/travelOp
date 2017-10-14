@@ -19,4 +19,5 @@ postRoutes.get('/', postController.index, views.showPosts); // show all
 postRoutes.post('/', postController.create, views.handleCreate); // create one
 
 
+
 module.exports = postRoutes;

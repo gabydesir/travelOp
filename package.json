@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/gabydesir/travelOp#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "cloudinary": "^1.9.0",

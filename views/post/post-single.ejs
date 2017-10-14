@@ -1,16 +1,16 @@
 <% include ../partials/header %>
 
 <div class='post'>
-  <h1><%= post.description %></h1>
-  <img src=<%= post.image %> />
+  <img src=<%= post.image %> /><br>
+  <p1><%= post.description %></p1><br>
 
-  <a href='/post/<%= post.id %>'> Edit this post </a>
+  <a href='/post/edit/<%= post.id %>'> Edit this post </a><br>
 
-  <form method='POST' action="/post/<%= post.id %>?_method=DELETE">
-    <input type="Submit" value="Delete"/>
-  </form>
+  <form method='POST' action="/post/<%= post.id %>?_method=DELETE"><br>
+    <input type="Submit" value="Delete"/><br>
+  </form><br>
 
-  <a href='/post'>See all Posts</a>
+  <a href='/post'>See all Posts</a><br>
 </div>
 
 <% include ../partials/footer %>
