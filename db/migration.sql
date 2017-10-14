@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS posts (
   id BIGSERIAL PRIMARY KEY,
   user_id INT REFERENCES users,
   description TEXT NOT NULL,
-  image VARCHAR(255)
+  image VARCHAR(255),
+  date_uploaded TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
