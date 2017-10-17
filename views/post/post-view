@@ -1,0 +1,14 @@
+<% include ../partials/header %>
+
+<a href= '/post/new'>Add post</a><br>
+<% for (let posts of data) { %>
+    <div class= 'postView'><br>
+    <%= posts.country %><br>
+    <img src=<%= posts.image %> /><br>
+
+    <a href='/auth/login'>Login</a>
+    <a href='/auth/register'>Register</a>
+
+    </div>
+  <% } %>
+<% include ../partials/footer %>

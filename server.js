@@ -15,6 +15,30 @@ const port = 5000;
 const cloudinary = require('cloudinary');
 const cloudinaryC = require('cloudinary-core');
 const axios = require('axios');
+// const jquery = require('jquery');
+// const blueimp = require('blueimp-file-upload');
+// const fileUpload = require('cloudinary-jquery-file-upload');
+// const dropzone = require('dropzone');
+const multer = require('multer');
+var upload = multer({ dest: 'uploads/' });
+
+// var exphbs = require('express-handlebars');
+// var sizeOf = require('image-size');
+// var exphbs = require('express-handlebars');
+
+// app.engine('.hbs', exphbs({ extname: '.hbs', defaultLayout: 'index1', layoutsDir:__dirname + '/views' }));
+// app.set('view engine', '.hbs');
+
+app.use('/now', function (req, res, next) {
+  return res.render('index1.html');
+});
+
+app.post('/upload', upload.single('file'), function( req, res, next ) {
+return res.status( 200 ).send( req.file );
+});
+
+
+
 
 // logging the dependencies
 // setting up logger
@@ -40,7 +64,13 @@ app.use(passport.session());
 // setting up static files
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// '/bower_components'
+
 // setting up ejs template
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html', 'ejs');
+
 app.set('view engine', 'ejs');
 
 const authRouter = require('./routes/authRoutes');
@@ -52,14 +82,21 @@ app.use('/user', userRoutes);
 const postRoutes = require('./routes/travel-route');
 app.use('/post', postRoutes);
 
+exports.index = function(req, res){
+res.render('index.html', { title: 'ejs' });};
+
 // get request handler for POSTS
 app.get('/', (req, res) => {
   res.render('index', {
-    message: 'HELLOoOOOoOOoOOOooO',
-    subtitle: 'Welcome to TravelOp',
+    // message: 'HELLOoOOOoOOoOOOooO',
+    // subtitle: 'Welcome to TravelOp',
   });
 });
 
+// cloudinary
+app.get('/view', (req, res) => {
+  res.render('post-view')
+})
 
 // API CALLS
 // app.use('/api/post', postRoutes, errorHandler);

@@ -1,9 +1,12 @@
 <% include ../partials/header %>
 
+<div class="login">
 <form method='POST' action='/auth/login'>
   <input name='username' type='text' placeholder='username' /><br>
   <input name='password' type='password' placeholder='password' /><br>
-  <input type='submit' value='Log in!' /><br>
+  <input type='submit' value='Log in!' class="buttonLogin" /><br>
 </form>
+</div>
+
 
 <% include ../partials/footer %>

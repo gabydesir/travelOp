@@ -1,13 +1,25 @@
 <% include ../partials/header %>
 
-<a href= '/post/new'>Add post</a><br>
-<% for (let posts of data) { %>
-    <div class= 'post'><br>
-    <img src=<%= posts.image %> /><br>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <a href='/post/<%= posts.id%>'>View</a>
+<a href= '/post/new' class="buttonHome">Add post</a><br>
+<a href= '/now' class="buttonHome">Home</a><br>
+      <div class="posts">
+  <% for (let posts of data) { %>
+      <class="name" <%= posts.country %> /><br>
+      <img id="postView" src=<%= posts.image %> /><br>
+      </div>
 
-    </div>
+      <a href='/post/<%= posts.id%>' class="view">VIEW</a>
+
+<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+  <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+  <div class="w3-modal-content w3-animate-zoom">
+    <img id="img01" style="width:100%">
+  </div>
+  </div>
+
+
   <% } %>
-
 <% include ../partials/footer %>

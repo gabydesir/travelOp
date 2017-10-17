@@ -30,6 +30,7 @@ module.exports = {
 
     Post.create({
       user_id: (req.body.user_id),
+      country: (req.body.country),
       description: (req.body.description),
       image: (req.body.image),
     })
@@ -45,6 +46,7 @@ module.exports = {
     // Post.update(req.body)
     Post.update({
       id: (req.body.id),
+      country: (req.body.country),
       description: (req.body.description),
       image: (req.body.image),
     })
