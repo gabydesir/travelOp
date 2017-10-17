@@ -33,9 +33,9 @@ function loginRequired(req, res, next) {
   return next();
 }
 
-// function logOut (req, res, next) {
-//   if (req.user) res.redirect('/auth/logout');
-// }
+function logOut (req, res, next) {
+  if (req.user) res.redirect('/');
+}
 
   // return next();
 
@@ -45,6 +45,7 @@ module.exports = {
   comparePass,
   loginRedirect,
   loginRequired,
+  logOut,
   createNewUser,
 };
 

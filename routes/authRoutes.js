@@ -15,9 +15,9 @@ authRouter.get('/register', authHelpers.loginRedirect, (req, res) => {
   res.render('auth/register');
 });
 
-// authRouter.get('/logout', authHelpers.logOut, (req, res) => {
-//   res.render('auth/logout');
-// });
+authRouter.get('/logout', authHelpers.logOut, (req, res) => {
+  res.render('auth/login');
+});
 
 // authRouter.post('/register', (req, res, next) => {
 //   authHelpers.createNewUser(req, res)

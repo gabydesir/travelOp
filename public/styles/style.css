@@ -89,9 +89,9 @@ ul {
 
 /*home button */
 .buttonHome {
-  margin: 25px;
+  margin: 35px;
   color: #CD853F;
-  padding: 20px;
+  padding: 0;
 }
 
 a {
