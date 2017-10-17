@@ -5,10 +5,38 @@ img {
   }
 }
 
-.twitter-timeline {
-  width: 50px;
-  height: 50px;
+/*home page index html */
+
+.twitter {
+  margin: 20px;
+  /*overflow-y: scroll;*/
+  border: top-right;
+  max-width: 30%;
+  /*float: right;*/
+  width:1000px;
+  overflow-y: auto;
+  height: 200px;
+  position: absolute;
+  top: 21.5%;
+  right: 5%;
+  /*padding: */
 }
+
+
+#twitter-widget-0 {
+  /*max-width: 50%;*/
+}
+
+.twitter-timeline {
+  /*height: 50px;*/
+  /*overflow-y: scroll;*/
+  /*float:left;*/
+  /*width:1000px;
+  overflow-y: auto;
+  height: 100px;*/
+   /*max-width: 50%;*/
+}
+
 
 .travelop {
   animation:
@@ -67,10 +95,13 @@ p {
 
 .content {
   display: block;
-  width: 110%;
-  height: 80%;
+  /*width: 110%;*/
+  width: 105%;
+  height: 100%;
   margin: 20px;
-  margin-left: 150px;
+  /*margin-left: 150px;*/
+  margin-left: 50px;
+
 }
 
 .posts {
@@ -96,22 +127,23 @@ p {
   margin-left: 150px;
 }
 
-/*#barbados {
-  height: 10%;
-}
-
-#new {
-  height: 10%;
-}
-
-#bang {
-  height: 10%;
-}*/
 
 /*home page index html */
 .twitter {
-  margin: 20px;
-  /*padding: */
+  /*margin: 20px;
+  overflow-y: auto;
+  max-width: 30%;*/
+
+  /*margin-bottom: 100px;*/
+  /*background-position: top-right;*/
+  /*padding-top: 20%;*/
+  /*float: right;*/
+  /*display: border-right;*/
+  /*align: top-right;*/
+  /*position: relative;*/
+  /*top: 30%;
+  right: 5%;*/
+  /*border-top: ridge;*/
 }
 
 #post {
@@ -125,8 +157,6 @@ p {
 #register {
 
 }
-
-
 
 /*register*/
 .register {
