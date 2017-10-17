@@ -11,7 +11,7 @@ const methodOverride = require('method-override');
 const pgp = require('pg-promise');
 const cookieParser = require('cookie-parser');
 const Twit = require('twit');// dependency for Twitter API
-const port = 5000;
+const port = 4000;
 const cloudinary = require('cloudinary');
 const cloudinaryC = require('cloudinary-core');
 const axios = require('axios');
@@ -94,9 +94,9 @@ app.get('/', (req, res) => {
 });
 
 // cloudinary
-app.get('/view', (req, res) => {
-  res.render('post-view')
-})
+// app.get('/view', (req, res) => {
+//   res.render('post-view')
+// })
 
 // API CALLS
 // app.use('/api/post', postRoutes, errorHandler);

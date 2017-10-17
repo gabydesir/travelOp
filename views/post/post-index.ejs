@@ -3,22 +3,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<a href= '/post/new' class="buttonHome">Add post</a><br>
-<a href= '/now' class="buttonHome">Home</a><br>
-      <div class="posts">
-  <% for (let posts of data) { %>
-      <class="name" <%= posts.country %> /><br>
-      <img id="postView" src=<%= posts.image %> /><br>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+
+
+<a href='/now' class="buttonHome">Home</a><br>
+
+<a href='/post/new' class="buttonHome">Add Post</a><br>
+
+      <div id='card' class="posts">
+    <% for (let posts of data) { %>
+      <div> <className="front"> <%= posts.country %></div><br>
+      <div> <img id="postView" src=<%= posts.image %> /></div><br>
       </div>
+
 
       <a href='/post/<%= posts.id%>' class="view">VIEW</a>
 
-<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
-  <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
-  <div class="w3-modal-content w3-animate-zoom">
-    <img id="img01" style="width:100%">
-  </div>
-  </div>
+
+
 
 
   <% } %>

@@ -1,15 +1,18 @@
 # travelOp
-TravelOp is an app that allows users to post their travel pictures, along with the description, location and recommendation 
-regarding the place.
+TravelOp is an app that allows users to post their travel pictures, along with the description, location and recommendation regarding the place.
 
 ## Inspiration
-There are no apps that are stricly for travel. I wanted to create an app that is all about traveling. Where users can see 
-the places that others are visiting and what is being said about those locations.
+There are no apps that are stricly for travel. I wanted to create an app that is all about traveling. Where users can manage their travel images. 
 
-Technologies that I will be using are HTML, CSS, Node.js, Express.js, EJS
+Technologies used HTML, CSS, Javascript, Node.js, Express.js, PostgreSQL.
 
 ## User Stories 
-An user can log in into their account and post their vacation pictures and description about the location. The user can categorize their pictures based on location. The user can see live tweets from Twitter on their home page. 
+As an user, I can register. 
+As an user, I can log in into my account.  
+As an user, I can post my travel pictures and description about the location.
+As an user, I can create, read, update and delete
+As an user, I can see live tweets from a travel magazine CondeNast 
+Traveler. 
 
 ## MVP 
 1) Create database
@@ -26,7 +29,8 @@ I will be using the MVC architecture to build my app. I will be starting with my
 MVC and lastly EJS.
 
 ## Time Management
-I currently focused on MVP, and hope to get the barebones of my app by Friday. And styling will be done over the weekend.
+I set up my auth, then proceeded to CRUD, Twitter API, and lastly styling. 
+
 
 | Taks                          | Date  | Estimated time| Actual |
 | -------------                 |:-----:| :------------:|:------:|
@@ -36,10 +40,9 @@ I currently focused on MVP, and hope to get the barebones of my app by Friday. A
 | Get Twitter API & read docs   | 10/10 | 1hrs          | 2hr    |
 | Build DB                      | 10/10 | 2hrs          | 1hr    |
 | Build CRUD functionality      | 10/10 | 5hrs          | 3hr    |
-| Get insta API & test run it   | 10/11 | 5hrs          |        |
-| Set up EJS views              | 10/11 | 2hrs          |        |
-| React                         | 10/12 | 8hrs          |        |
+| Get insta API & test run it   | 10/11 | 5hrs          | 5hr    |
+| Set up EJS views              | 10/11 | 2hrs          | 3hr    |
 | Auth Docs                     | 10/13 | 12hrs         | 6hr    |
-| Debbuging                     | 10/14 | 5hrs          |        |
-| Styling                       | 10/15 | 12hrs         |        |
+| Debbuging                     | 10/14 | 5hrs          | 4hr    |
+| Styling                       | 10/15 | 12hrs         | 12hr   |
                                   TOTAL  60hrs           

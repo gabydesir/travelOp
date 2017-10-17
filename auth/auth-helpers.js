@@ -33,6 +33,14 @@ function loginRequired(req, res, next) {
   return next();
 }
 
+// function logOut (req, res, next) {
+//   if (req.user) res.redirect('/auth/logout');
+// }
+
+  // return next();
+
+
+
 module.exports = {
   comparePass,
   loginRedirect,

@@ -5,35 +5,25 @@ img {
   }
 }
 
+p {
+  /*margin: 0px;
+  text-align: center;
+  text-indent: justify;*/
+  /*padding: 30px;*/
+}
+
+
 /*home page index html */
 .twitter {
   margin: 20px;
-  /*overflow-y: scroll;*/
   border: top-right;
   max-width: 30%;
-  /*float: right;*/
   width:1000px;
   overflow-y: auto;
   height: 200px;
   position: absolute;
   top: 27%;
   right: 5%;
-  /*padding: */
-}
-
-
-#twitter-widget-0 {
-  /*max-width: 50%;*/
-}
-
-.twitter-timeline {
-  /*height: 50px;*/
-  /*overflow-y: scroll;*/
-  /*float:left;*/
-  /*width:1000px;
-  overflow-y: auto;
-  height: 100px;*/
-   /*max-width: 50%;*/
 }
 
 
@@ -68,7 +58,6 @@ img {
 
 body {
   background-color: #ffecc4;
-    /*background: url('https://i.pinimg.com/originals/dc/eb/f1/dcebf16837b3e38eb0b6b7510e38acb4.gif');*/
 }
 
 .navbar {
@@ -81,9 +70,7 @@ li {
 }
 
 a {
-    /*display: block;*/
     padding: 75px;
-    /*background-color: #dddddd;*/
 }
 
 
@@ -99,14 +86,12 @@ ul {
     background-color: #f4a341;
 }
 
-li {
-  /*float: right;*/
-}
 
 /*home button */
 .buttonHome {
   margin: 25px;
   color: #CD853F;
+  padding: 20px;
 }
 
 a {
@@ -147,15 +132,23 @@ p {
   /*text-align: center;*/
 }
 
-
+/*WORKS*/
 #postView {
   width: 50%;
   height: auto;
   display: block;
-  /*width: 80%;*/
   height: 50%;
   margin: 20px;
   margin-left: 150px;
+}
+
+#img {
+  /*width: 50%;
+  height: auto;
+  display: block;
+  height: 50%;
+  margin: 20px;
+  margin-left: 150px;*/
 }
 
 
@@ -222,11 +215,6 @@ p {
   font-size: 15px;
   background-color: #CD853F;
 }
-
-
-
-
-
 
 
 

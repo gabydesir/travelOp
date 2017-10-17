@@ -1,5 +1,7 @@
 
 
+// CHANGE var TO var
+
 // slides home page
 var myIndex = 0;
 carousel();
@@ -69,20 +71,13 @@ twttr.widgets.createTimeline(
   document.getElementById("container")
 );
 
-//     sliderId: "slider",
-//     startSlide: 0,
-//     effect: "series1",
-//     effectRandom: false,
-//     pauseTime: 2800,
-//     transitionTime: 1200,
-//     slices: 14,
-//     boxes: 8,
-//     hoverPause: 1,
-//     autoAdvance: true,
-//     thumbnailsWrapperId: "thumb_container_id",
-//     m: false,
-//     license: "mylicense"
-// };
+
+$("#card").flip();
+
+$("#card").flip({
+  axis: 'x',
+  trigger: 'hover'
+});
 
 
 
@@ -91,60 +86,6 @@ twttr.widgets.createTimeline(
 
 
 
-// var nsOptions = { transitionType: "zoom" }
-
-// var sliderOptions =
-//     {
-//     sliderId: "slider",
-//     effect: "17,13,1",
-//     effectRandom: true,
-//     pauseTime: 2800,
-//     transitionTime: 1200,
-//     slices: 14,
-//     boxes: 8,
-//     hoverPause: 1,
-//     autoAdvance: true,
-//     captionOpacity: 0.4,
-//     captionEffect: "fade",
-//     thumbnailsWrapperId: "thumbs",
-//     m: false,
-//     // license: "mylicense"
-//     };
-
-// var thumbnailSliderOptions = {
-//     sliderId: "imageSlider",
-//     orientation: "horizontal",
-//     thumbWidth: "140px", // or "xx%", or "auto"
-//     thumbHeight: "70px", // or "xx%", or "auto"
-//     showMode: 1,
-//     autoAdvance: true,
-//     selectable: true,
-//     slideInterval: 3000, // in seconds
-//     transitionSpeed: 300, // in seconds
-//     shuffle: false,
-//     startSlideIndex: 0, // 0-based
-//     pauseOnHover: true,
-//     initSliderByCallingInitFunc: false,
-//     rightGap: 0, // or 90, or "auto"
-//     keyboardNav: true,
-//     mousewheelNav: false,
-//     before: null,
-//     // license: "yourlicensekey"
-// };
-
-// var mcThumbnailSlider = new ThumbnailSlider(thumbnailSliderOptions);
 
 
 
-
-
-
-
-
-// var nsOptions = { ...
-//     thumbWidth: "50%",//As the thumbHeight is set to "auto", this 50% is the percentage
-//     //of the gallery viewport width.
-//     thumbHeight: "auto",
-//     showMode: 3, //Then the active thumbnail always stays in the center of the gallery
-//     ...
-// }
