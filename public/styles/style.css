@@ -6,7 +6,6 @@ img {
 }
 
 /*home page index html */
-
 .twitter {
   margin: 20px;
   /*overflow-y: scroll;*/
@@ -17,7 +16,7 @@ img {
   overflow-y: auto;
   height: 200px;
   position: absolute;
-  top: 21.5%;
+  top: 27%;
   right: 5%;
   /*padding: */
 }
@@ -72,6 +71,38 @@ body {
     /*background: url('https://i.pinimg.com/originals/dc/eb/f1/dcebf16837b3e38eb0b6b7510e38acb4.gif');*/
 }
 
+.navbar {
+  position: absolute;
+  top:85px;
+}
+
+li {
+  display: inline;
+}
+
+a {
+    /*display: block;*/
+    padding: 75px;
+    /*background-color: #dddddd;*/
+}
+
+
+li a:hover {
+  background-color: #f4bc42;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f4a341;
+}
+
+li {
+  /*float: right;*/
+}
+
 /*home button */
 .buttonHome {
   margin: 25px;
@@ -98,7 +129,7 @@ p {
   /*width: 110%;*/
   width: 105%;
   height: 100%;
-  margin: 20px;
+  margin: 40px;
   /*margin-left: 150px;*/
   margin-left: 50px;
 
