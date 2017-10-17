@@ -11,12 +11,14 @@
 
 <a href='/post/new' class="buttonHome">Add Post</a><br>
 
-      <div id='card' class="posts">
-    <% for (let posts of data) { %>
-      <div> <className="front"> <%= posts.country %></div><br>
-      <div> <img id="postView" src=<%= posts.image %> /></div><br>
-      </div>
+      <div id='container' class="posts">
+      <div id='card' class='shadow'>
 
+    <% for (let posts of data) { %>
+      <div> <className="back face center"> <%= posts.country %></div><br>
+      <div> <img className="front face" id="postView" src=<%= posts.image %> /></div><br>
+      </div>
+      </div>
 
       <a href='/post/<%= posts.id%>' class="view">VIEW</a>
 
