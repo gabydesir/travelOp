@@ -11,7 +11,7 @@ const methodOverride = require('method-override');
 const pgp = require('pg-promise');
 const cookieParser = require('cookie-parser');
 const Twit = require('twit');// dependency for Twitter API
-const port = 4000;
+const PORT =  process.env.PORT || 3001;
 const cloudinary = require('cloudinary');
 const cloudinaryC = require('cloudinary-core');
 const axios = require('axios');
@@ -154,9 +154,9 @@ app.get('/api', (req, res) => {
 });
 
 // Listening on PORT
-app.listen(port, () => {
+app.listen(PORT, () => {
   // to prove it worked, print to the terminal
-  console.log(`TravelOp is listening on port ${port}`);
+  console.log(`TravelOp is listening on port ${PORT}`);
 });
 
 // app.get('/', function(req,res){
