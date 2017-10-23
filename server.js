@@ -90,12 +90,12 @@ exports.index = function(req, res){
 res.render('index.html', { title: 'ejs' });};
 
 // get request handler for POSTS
-// app.get('/', (req, res) => {
-//   res.render('index', {
-//     // message: 'HELLOoOOOoOOoOOOooO',
-//     // subtitle: 'Welcome to TravelOp',
-//   });
-// });
+app.get('/', (req, res) => {
+  res.render('index', {
+    // message: 'HELLOoOOOoOOoOOOooO',
+    // subtitle: 'Welcome to TravelOp',
+  });
+});
 
 // cloudinary
 // app.get('/view', (req, res) => {
