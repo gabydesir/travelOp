@@ -1,4 +1,4 @@
-\c travel_op;
+-- \c travel_op;
 
 DROP TABLE IF EXISTS users;
 -- DROP TABLE IF EXISTS categories CASCADE;

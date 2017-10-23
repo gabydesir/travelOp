@@ -61,9 +61,13 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// use this for local host and the other for heroku
 // setting up static files
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use(express.static('public'));
+(process.env.NODE_ENV === 'production')
+app.use(express.static('client/build'));
 
 // '/bower_components'
 
