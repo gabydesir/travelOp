@@ -75,7 +75,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html', 'ejs');
 
-// app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');
 
 const authRouter = require('./routes/authRoutes');
 app.use('/auth', authRouter);
