@@ -73,7 +73,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // setting up ejs template
 app.engine('html', require('ejs').renderFile);
-// app.set('view engine', 'html', 'ejs');
+app.set('view engine', 'html', 'ejs');
 
 // app.set('view engine', 'ejs');
 
