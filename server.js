@@ -50,7 +50,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(methodOverride('_method'));
 app.use(cookieParser());
-app.use(bodyParser.json());
+
 
 // setting up passport middleware for authentication
 app.use(session({
@@ -63,19 +63,19 @@ app.use(passport.session());
 
 // use this for local host and the other for heroku
 // setting up static files
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use(express.static('public'));
-(process.env.NODE_ENV === 'production')
-app.use(express.static('client/build'));
+// (process.env.NODE_ENV === 'production')
+// app.use(express.static('client/build'));
 
 // '/bower_components'
 
 // setting up ejs template
 app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html', 'ejs');
+// app.set('view engine', 'html', 'ejs');
 
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
 
 const authRouter = require('./routes/authRoutes');
 app.use('/auth', authRouter);
@@ -86,8 +86,8 @@ app.use('/user', userRoutes);
 const postRoutes = require('./routes/travel-route');
 app.use('/post', postRoutes);
 
-exports.index = function(req, res){
-res.render('index.html', { title: 'ejs' });};
+// exports.index = function(req, res){
+// res.render('index.html', { title: 'ejs' });};
 
 // get request handler for POSTS
 app.get('/', (req, res) => {
