@@ -3,6 +3,7 @@
 const express = require('express');
 const postController = require('../controllers/postController');
 const views = require('../controllers/viewController');
+const auth = require('../auth/auth-helpers');
 
 const postRoutes = express.Router();
 
@@ -15,7 +16,7 @@ postRoutes.get('/:id', postController.show, views.showOnePost); // get by id, to
 postRoutes.put('/:id', postController.update, views.handleUpdate); // get by id, to update one
 postRoutes.delete('/:id', postController.destroy, views.handleDelete); // get by id, to delete one
 
-postRoutes.get('/', postController.index, views.showPosts); // show all
+postRoutes.get('/', auth.loginRequired, postController.index, views.showPosts); // show all
 postRoutes.post('/', postController.create, views.handleCreate); // create one
 
 

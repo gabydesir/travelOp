@@ -10,7 +10,6 @@ function comparePass(userPassword, databasePassword) {
 
 function loginRedirect(req, res, next) {
   if (req.user) return res.redirect('/post');
-  console.log("user:", req.user);
   return next();
 }
 
@@ -28,13 +27,16 @@ function createNewUser(req) {
 }
 
 function loginRequired(req, res, next) {
-  if (!req.user) res.redirect('/auth/login');
+  if (!req.user) return res.redirect('/auth/login');
 
   return next();
 }
 
 function logOut (req, res, next) {
-  if (req.user) res.redirect('/');
+  if (req.user){
+    req.logout();
+    res.redirect('/');
+  }
 }
 
   // return next();
