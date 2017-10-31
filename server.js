@@ -15,28 +15,15 @@ const PORT =  process.env.PORT || 3001;
 const cloudinary = require('cloudinary');
 const cloudinaryC = require('cloudinary-core');
 const axios = require('axios');
-// const jquery = require('jquery');
-// const blueimp = require('blueimp-file-upload');
-// const fileUpload = require('cloudinary-jquery-file-upload');
-// const dropzone = require('dropzone');
-const multer = require('multer');
-var upload = multer({ dest: 'uploads/' });
 
-
-
+// setting up routes
 app.use('/now', function (req, res, next) {
   return res.render('index1.html');
 });
 
-app.post('/upload', upload.single('file'), function( req, res, next ) {
-return res.status( 200 ).send( req.file );
-});
-
-
-
 
 // logging the dependencies
-// setting up logger
+// setting up logger, body-parser, method-override
 app.use(logger('dev'));
 // setting up body-parser
 app.use(bodyParser.json());
@@ -60,11 +47,6 @@ app.use(passport.session());
 // setting up static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(express.static('public'));
-// (process.env.NODE_ENV === 'production')
-// app.use(express.static('client/build'));
-
-// '/bower_components'
 
 // setting up ejs template
 app.engine('html', require('ejs').renderFile);
@@ -81,8 +63,6 @@ app.use('/user', userRoutes);
 const postRoutes = require('./routes/travel-route');
 app.use('/post', postRoutes);
 
-// exports.index = function(req, res){
-// res.render('index.html', { title: 'ejs' });};
 
 // get request handler for POSTS => main route
 app.get('/', (req, res) => {
@@ -91,15 +71,6 @@ app.get('/', (req, res) => {
     // subtitle: 'Welcome to TravelOp',
   });
 });
-
-// cloudinary
-// app.get('/view', (req, res) => {
-//   res.render('post-view')
-// })
-
-// API CALLS
-// app.use('/api/post', postRoutes, errorHandler);
-// /api/twitter
 
 app.get('/api/twitter', (req, res) => {
   const T = new Twit({
@@ -121,31 +92,13 @@ app.get('/api/twitter', (req, res) => {
 });
 // res.send => on index to render on the /
 // then have the second part of the function into a separate function
-//
 
-// cloudinary.v2.uploader.upload("./public/images/haton.jpg",
-//     function(error, result) {console.log(result); });
-
-//const apiCall = require('./public/apiCall');
 app.get('/api', (req, res) => {
   res.send('hello')
     // axios.get('/api/twitter')
     //   .then((res) => {
     //     console.log(res)
 // no need for second API call =>
-
-    //     const tweetArr = res.data.data.statuses;
-    //     const item = tweetArr[Math.floor(Math.random() * tweetArr.length)];
-    //     console.log(item.text);
-    //     res.send({
-    //       tweet: item.text,
-    //       screen_name: item.user.screen_name,
-    //     })
-    //     .catch(err => console.log(err));
-    //   // console.log(JSON.stringify(res.data.data.statuses[0].text))
-    //   });
- // apiCall()
- // res.render('index');
 });
 
 // Listening on PORT
@@ -154,9 +107,4 @@ app.listen(PORT, () => {
   console.log(`TravelOp is listening on port ${PORT}`);
 });
 
-// app.get('/', function(req,res){
-//   res.send('HELLOoOOOoOOoOOOooO! <h1>Welcome to TravelOp </h1>');
-// });
-
 module.exports = app;
-

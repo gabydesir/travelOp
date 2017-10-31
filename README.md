@@ -2,16 +2,22 @@
 TravelOp is an app that allows users to post their travel pictures, along with the description, location and recommendation regarding the place.
 
 ## Inspiration
-There are no apps that are stricly for travel. I wanted to create an app that is all about traveling. Where users can manage their travel images. 
+I was hospitalized for nearly 3 months and looking at my travel pictures 
+motivated me to get better. At the time, I wished I had an app where I could manage my 
+photographs that was not social media. 
 
-Technologies used HTML, CSS, Javascript, Node.js, Express.js, PostgreSQL.
+## Technologies used 
+1. HTML/CSS
+2. Javascript
+3. Node.js
+4. Express.js
+5. PostgreSQL
 
 ## User Stories 
-As an user, I can register. 
-As an user, I can log in into my account.  
+As an user, I can register and login into my account. 
 As an user, I can post my travel pictures and description about the location.
 As an user, I can create, read, update and delete
-As an user, I can see live tweets from a travel magazine CondeNast 
+As an user, I can see live tweets from travel magazine CondeNast 
 Traveler. 
 
 ## MVP 
@@ -25,8 +31,20 @@ Traveler.
 1) Auth 
 
 ## Build Strategy
-I will be using the MVC architecture to build my app. I will be starting with my database, user authorization and authention, 
-MVC and lastly EJS.
+I will be using the MVC architecture to build my app. I will be starting with 
+my database, user authorization and authention, MVC and lastly EJS.
+
+## Node Modules 
+1. Passport, to build a User System with authentication 
+2. Axios (CRUD), used to interact with the server
+3. PG-Promise, to read SQL queries on Node
+4. Logger, terminal logger
+5. DotENV, allows .env support 
+6. Express, used with Node.js 
+7. Path, to set up public folder for static files
+8. Express Session, used to enable sessions, allow users activities 
+and to keep them logged in
+9. Body-Parser, parse HTML and receive json object based on inputs on the server
 
 ## Time Management
 I set up my auth, then proceeded to CRUD, Twitter API, and lastly styling. 
@@ -46,3 +64,4 @@ I set up my auth, then proceeded to CRUD, Twitter API, and lastly styling.
 | Debbuging                     | 10/14 | 5hrs          | 4hr    |
 | Styling                       | 10/15 | 12hrs         | 12hr   |
                                   TOTAL  60hrs           
+
