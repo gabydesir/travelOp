@@ -1,6 +1,7 @@
 const db = require('../config/configdb');
 const User = {};
 
+// queries to find existing users
 User.findByUserName = (userName) => db.oneOrNone(
     `
     SELECT * FROM users
@@ -8,7 +9,7 @@ User.findByUserName = (userName) => db.oneOrNone(
     [userName],
   );
 
-
+// query to create new users
 User.create = (user) =>  db.one(
     `
     INSERT INTO users

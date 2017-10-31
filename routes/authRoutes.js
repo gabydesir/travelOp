@@ -19,23 +19,6 @@ authRouter.get('/logout', authHelpers.logOut, (req, res) => {
   res.render('auth/login');
 });
 
-// authRouter.post('/register', (req, res, next) => {
-//   authHelpers.createNewUser(req, res)
-//     .then((user) => {
-//       console.log(user,'--- maybe user');
-//       req.login(user, (err) => {
-//         console.log("authHelper: ", user)
-//         if (err) return next(err);
-
-//         res.redirect('/user');
-//       });
-//     })
-//     .catch((err) => { res.status(500).json({ status: 'error' }); });
-// });
-// what I was missing
-// authRouter.get('/login', authHelpers.loginRedirect, (req, res) => {
-//   res.render('auth/login');
-// });
 
 authRouter.post('/register', userController.create);
 

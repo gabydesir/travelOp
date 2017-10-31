@@ -10,6 +10,8 @@ const options = {};
 
 init();
 
+// compare user input and what is in db
+// if its the same give user access
 passport.use(
   new LocalStrategy(options, (username, password, done) => {
     User.findByUserName(username)

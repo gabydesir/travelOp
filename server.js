@@ -22,12 +22,7 @@ const axios = require('axios');
 const multer = require('multer');
 var upload = multer({ dest: 'uploads/' });
 
-// var exphbs = require('express-handlebars');
-// var sizeOf = require('image-size');
-// var exphbs = require('express-handlebars');
 
-// app.engine('.hbs', exphbs({ extname: '.hbs', defaultLayout: 'index1', layoutsDir:__dirname + '/views' }));
-// app.set('view engine', '.hbs');
 
 app.use('/now', function (req, res, next) {
   return res.render('index1.html');
@@ -89,7 +84,7 @@ app.use('/post', postRoutes);
 // exports.index = function(req, res){
 // res.render('index.html', { title: 'ejs' });};
 
-// get request handler for POSTS
+// get request handler for POSTS => main route
 app.get('/', (req, res) => {
   res.render('index', {
     // message: 'HELLOoOOOoOOoOOOooO',

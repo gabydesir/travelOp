@@ -18,7 +18,7 @@ function carousel() {
     setTimeout(carousel, 3000);
 }
 
-// progress bar
+// progress bar in add page
 function move() {
   var elem = document.getElementById("myBar");
   var width = 0;
@@ -71,7 +71,7 @@ twttr.widgets.createTimeline(
   document.getElementById("container")
 );
 
-
+// flipping images in POST page
 $("#card").flip();
 
 $("#card").flip({

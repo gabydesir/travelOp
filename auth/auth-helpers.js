@@ -8,11 +8,14 @@ function comparePass(userPassword, databasePassword) {
   return bcrypt.compareSync(userPassword, databasePassword);
 }
 
+// if user is login give access to all posts
 function loginRedirect(req, res, next) {
   if (req.user) return res.redirect('/post');
   return next();
 }
 
+// create new user
+// hash to secure the password
 function createNewUser(req) {
   console.log("inside createNewUser", req.body.username)
   const salt = bcrypt.genSaltSync();
@@ -26,12 +29,15 @@ function createNewUser(req) {
   });
 }
 
+// login function to start an user's session
 function loginRequired(req, res, next) {
   if (!req.user) return res.redirect('/auth/login');
 
   return next();
 }
 
+// logout function to end the user's session
+// redirect to homepage
 function logOut (req, res, next) {
   if (req.user){
     req.logout();
@@ -39,10 +45,7 @@ function logOut (req, res, next) {
   }
 }
 
-  // return next();
-
-
-
+// exporting required dependencies
 module.exports = {
   comparePass,
   loginRedirect,

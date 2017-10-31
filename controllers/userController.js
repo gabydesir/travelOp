@@ -2,6 +2,9 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 const userController = {};
 
+// user controller to access user db
+// index to find existing users
+
 userController.index = (req, res) => {
    res.json({
      user: req.user,
@@ -9,7 +12,7 @@ userController.index = (req, res) => {
    });
 }
 
-
+// create new users
 userController.create = (req, res) => {
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(req.body.password, salt);
