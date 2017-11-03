@@ -20,7 +20,7 @@ p {
   max-width: 35%;
   width:1000px;
   overflow-y: auto;
-  height: 364px;
+  height: 420px;
   position: absolute;
   top: 22%;
   right: 5%;
@@ -62,7 +62,7 @@ body {
 
 .navbar {
   position: absolute;
-  top:140px;
+  top:155px;
 }
 
 li {
@@ -70,7 +70,7 @@ li {
 }
 
 a {
-    padding: 175px;
+    padding: 207px;
 }
 
 
